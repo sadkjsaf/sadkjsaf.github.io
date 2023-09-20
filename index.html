@@ -167,10 +167,397 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/20/Linux%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0003--mkdir%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="钟表匠">
+      <meta itemprop="description" content="立志成为运维工程师的运维小白">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="钟表铺">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/09/20/Linux%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0003--mkdir%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0/" class="post-title-link" itemprop="url">Linux学习日记003--mkdir命令学习</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-09-20 00:00:00 / 修改时间：17:22:49" itemprop="dateCreated datePublished" datetime="2023-09-20T00:00:00+08:00">2023-09-20</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Linux学习日记003–mkdir命令学习"><a href="#Linux学习日记003–mkdir命令学习" class="headerlink" title="Linux学习日记003–mkdir命令学习"></a>Linux学习日记003–mkdir命令学习</h2><h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>今天我们见解,mkdir</p>
+<p><strong>mkdir命令是命令 make dircetory 的简写，mkdir命令用于创建文件夹的命令，命令所在的路径为 &#x2F;bin&#x2F;mkdir。</strong></p>
+<h3 id="2-常用参数与使用场景："><a href="#2-常用参数与使用场景：" class="headerlink" title="2.常用参数与使用场景："></a>2.常用参数与使用场景：</h3><h5 id="2-1-1-文件夹创建"><a href="#2-1-1-文件夹创建" class="headerlink" title="2.1.1 文件夹创建"></a>2.1.1 文件夹创建</h5><p>mkdir 命令可以同时创建单个文件夹和多个文件夹。</p>
+<p>下面我们以奥特曼与铠甲勇士为例</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建单个文件夹  <span class="built_in">mkdir</span> 文件夹名称</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">小红喜欢奥特曼，于是创建“奥特曼”文件夹</span> </span><br><span class="line">mkdir 奥特曼</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建多个文件夹  <span class="built_in">mkdir</span> 文件夹1  文件夹2</span> </span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">小蓝同时喜欢奥特曼与铠甲勇士 于是同时创建“奥特曼”与“铠甲勇士”文件夹</span></span><br><span class="line">mkdir 奥特曼 铠甲勇士</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-1-2-递归创建文件夹"><a href="#2-1-2-递归创建文件夹" class="headerlink" title="2.1.2 递归创建文件夹"></a>2.1.2 递归创建文件夹</h5><p> mkdir 命令可以通过参数 -p(–parents) 递归创建文件夹</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">递归创建文件夹 <span class="built_in">mkdir</span> -p 文件夹/子文件夹</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">管理员将“奥特曼”和“铠甲勇士”都创建到“特摄片”文件夹里</span></span><br><span class="line">mkdir -p 特摄片/奥特曼</span><br><span class="line">mkdir -p 特摄片/铠甲勇士</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">在通过 <span class="built_in">ls</span> 查看特摄片文件夹</span></span><br><span class="line">[root@iZbp18kqcwa62o5vmxsgkzZ ~]# ls ./特摄片</span><br><span class="line">奥特曼  铠甲勇士</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-1-3-创建文件夹权限"><a href="#2-1-3-创建文件夹权限" class="headerlink" title="2.1.3 创建文件夹权限"></a>2.1.3 创建文件夹权限</h5><p> mkdir 命令可以通过参数 -m(–mode) 在创建文件夹进行权限设置</p>
+<p> 下面我们继续以特摄片文件夹为例</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建文件夹权限 <span class="built_in">mkdir</span> -m 文件夹名称 权限数字</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">管理员想要自己对文件夹“特摄片”有读写、执行的权限，而组或其他成员只写读和执行的权限</span></span><br><span class="line">mkdir -m -755 特摄片</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">权限数字及其含义</span></span><br><span class="line">0：没有任何权限</span><br><span class="line">1：执行权限</span><br><span class="line">2：写入权限</span><br><span class="line">3：写入和执行权限</span><br><span class="line">4：读取权限</span><br><span class="line">5：读取和执行权限</span><br><span class="line">6：读取和写入权限</span><br><span class="line">7：读取、写入和执行权限</span><br><span class="line">每个数字分别代表所有者、所有者组、其他用户的权限</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-1-4-显示创建的文件夹名称"><a href="#2-1-4-显示创建的文件夹名称" class="headerlink" title="2.1.4 显示创建的文件夹名称"></a>2.1.4 显示创建的文件夹名称</h5><p>mkdir 命令可以通过参数 -v(–verbose) 显示创建的每个文件夹的名称</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">显示创建的文件夹名称 <span class="built_in">mkdir</span> -v 文件夹名</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">小黄喜欢每次创建文件后出现提示，在创建文件夹“九阳真功”使用参数-v</span></span><br><span class="line">mkdir -v 九阳神功</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">结果显示</span></span><br><span class="line">mkdir: 已创建目录 &quot;九阳真功&quot;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-2-mkdir命令的常用参数"><a href="#2-2-mkdir命令的常用参数" class="headerlink" title="2.2 mkdir命令的常用参数"></a>2.2 mkdir命令的常用参数</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-v(--verbose) 显示创建的每个文件夹的名称</span><br><span class="line">-p(--parents) 递归创建文件夹</span><br><span class="line">-m(--mode) 在创建文件夹进行权限设置</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-今日学习总结"><a href="#3-今日学习总结" class="headerlink" title="3.今日学习总结"></a>3.今日学习总结</h3><p>mkdir命令是在Linux操作系统中用于创建新文件夹的命令。它可以通过多个参数来控制文件夹的创建，例如指定文件夹的权限、递归创建文件夹。mkdir命令是一个非常常用的命令，对于管理文件和目录的工作非常有用。</p>
+<h3 id="4-参考文章"><a href="#4-参考文章" class="headerlink" title="4.参考文章"></a>4.参考文章</h3><p>mkdir命令详解<a target="_blank" rel="noopener" href="https://www.cnblogs.com/shenjianping/p/13782181.html">mkdir命令详解 - iveBoy - 博客园 (cnblogs.com)</a></p>
+<p>【linux命令讲解大全】107.mkdir命令：创建目录的指令<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_33681891/article/details/132845344">【linux命令讲解大全】107.mkdir命令：创建目录的指令_全栈若城的博客-CSDN博客</a></p>
+<p>Monica智能AI</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/20/Linux%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0005--move%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="钟表匠">
+      <meta itemprop="description" content="立志成为运维工程师的运维小白">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="钟表铺">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/09/20/Linux%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0005--move%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0/" class="post-title-link" itemprop="url">Linux学习日记005--move命令学习</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-09-20 00:00:00 / 修改时间：17:24:06" itemprop="dateCreated datePublished" datetime="2023-09-20T00:00:00+08:00">2023-09-20</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Linux学习日记005–move命令学习"><a href="#Linux学习日记005–move命令学习" class="headerlink" title="Linux学习日记005–move命令学习"></a>Linux学习日记005–move命令学习</h2><h3 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h3><p>今天我们见解,mv</p>
+<p><strong>mv命令是命令 move 的简写，mv 命令用于移动文件或文件夹的命令，命令所在的路径为 &#x2F;bin&#x2F;mv。</strong></p>
+<h3 id="2-常用参数与使用场景："><a href="#2-常用参数与使用场景：" class="headerlink" title="2.常用参数与使用场景："></a>2.常用参数与使用场景：</h3><h5 id="2-1-1-已存在文件备份"><a href="#2-1-1-已存在文件备份" class="headerlink" title="2.1.1 已存在文件备份"></a>2.1.1 已存在文件备份</h5><p>mv 命令可以通过参数 -b 为已存在文件为其创建一个备份</p>
+<p>下面我们以“真传”为例</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建备份  <span class="built_in">mv</span> -b 目标文件 目标文件夹路径</span>  </span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">管理员将文件 <span class="string">&quot;天龙八部&quot;</span> 移动到 /home 中，并备份一份</span></span><br><span class="line">mv -b 天龙八部 /home</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">结果展示</span></span><br><span class="line">[root@iZbp18kqcwa62o5vmxsgkzZ 真传]# mv -b 天龙八部 /home</span><br><span class="line">mv：是否覆盖&quot;/home/天龙八部&quot;？ y</span><br><span class="line">[root@iZbp18kqcwa62o5vmxsgkzZ 真传]# ls</span><br><span class="line">[root@iZbp18kqcwa62o5vmxsgkzZ 真传]# ls /home</span><br><span class="line">jack  user  天龙八部  天龙八部~</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-1-2-文件移动"><a href="#2-1-2-文件移动" class="headerlink" title="2.1.2 文件移动"></a>2.1.2 文件移动</h5><p> mv 命令移动文件或多个文件</p>
+<p> 下面我们以“特摄片”文件夹为例</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">移动文件 <span class="built_in">mv</span> 源文件 目标文件夹</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">管理员的特摄片中的 “小魔仙” 移动到 /home</span></span><br><span class="line">mv 小魔仙 /home</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">移动多个文件 <span class="built_in">mv</span> 源文件1 源文件2 目标文件夹</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">小红的特摄片文件夹中的“奥特曼”和“铠甲勇士”两个文件移动到 /home</span></span><br><span class="line">mv 奥特曼 铠甲勇士 /home</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">移动结果反馈</span></span><br><span class="line">mv 奥特曼 铠甲勇士 /home</span><br><span class="line">[xiaohong@iZbp18kqcwa62o5vmxsgkzZ 特摄片]# ls /home</span><br><span class="line">jack  user  奥特曼  铠甲勇士</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-1-3-文件夹移动"><a href="#2-1-3-文件夹移动" class="headerlink" title="2.1.3 文件夹移动"></a>2.1.3 文件夹移动</h5><p> mv 命令在直接使用或使用参数 -i 在删除之前提示用户是否删除</p>
+<p> 下面我们将特摄片文件夹移动为例</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">文件夹移动 <span class="built_in">mv</span> 文件夹 目标文件夹</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">小红将文件夹“特摄片”移动到 /home</span></span><br><span class="line">mv 特摄片 /home</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">结果反馈</span></span><br><span class="line"> mv 特摄片 /home</span><br><span class="line">[xiaohong@iZbp18kqcwa62o5vmxsgkzZ ~]# ls /home</span><br><span class="line">jack  user  奥特曼  铠甲勇士  特摄片</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-1-4-强制覆盖旧文件"><a href="#2-1-4-强制覆盖旧文件" class="headerlink" title="2.1.4 强制覆盖旧文件"></a>2.1.4 强制覆盖旧文件</h5><p>  mv 命令可以通过参数 -f 强制覆盖旧文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">强制覆盖旧文件 <span class="built_in">rm</span> -f 源文件 目标文件夹</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">小兰得到一本新的“真传”，她将文件夹移动到 /home 中，强制覆盖原来旧文件夹</span></span><br><span class="line">mv -f 真传 /home</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-1-6-交互式覆盖"><a href="#2-1-6-交互式覆盖" class="headerlink" title="2.1.6 交互式覆盖"></a>2.1.6 交互式覆盖</h5><p>   mv 命令可以通过参数 -i 交互式覆盖旧有文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">交互式覆盖 <span class="built_in">mv</span> -i 源文件夹 目标文件夹</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">用户zk移动文件夹，通过参数 -i 在覆盖旧文件夹时提示</span></span><br><span class="line">mv -i 真传 /home</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-1-7-对比文件新旧"><a href="#2-1-7-对比文件新旧" class="headerlink" title="2.1.7 对比文件新旧"></a>2.1.7 对比文件新旧</h5><p> mv 命令可以通过参数 -u 对比新旧文件或目标文件不存在时，才执行移动操作</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">对比文件新旧 <span class="built_in">mv</span> -u 源文件 目标文件</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">小黄不记得以前移动过真传文件夹，为了验证他又创建了同一个真传文件夹，使用参数 -u 对比移动真传文件夹</span></span><br><span class="line">mv -u 源文件 目标文件</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">结果展示</span></span><br><span class="line">[xiaohuang@iZbp18kqcwa62o5vmxsgkzZ ~]# mv -u 真传 /home</span><br><span class="line">mv：是否覆盖&quot;/home/真传&quot;？ y</span><br><span class="line">mv: 无法将&quot;真传&quot; 移动至&quot;/home/真传&quot;: 目录非空</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-今日学习总结："><a href="#3-今日学习总结：" class="headerlink" title="3.今日学习总结："></a>3.今日学习总结：</h3><p>mv命令用于移动和重命名文件或目录。它可以将文件从一个位置移动到另一个位置，也可以将文件重命名为新的名称。如果目标位置已经存在同名文件，则会被覆盖。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/20/Linux%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0004--remove%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="钟表匠">
+      <meta itemprop="description" content="立志成为运维工程师的运维小白">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="钟表铺">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/09/20/Linux%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0004--remove%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0/" class="post-title-link" itemprop="url">Linux学习日记004--remove命令学习</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-09-20 00:00:00 / 修改时间：17:23:35" itemprop="dateCreated datePublished" datetime="2023-09-20T00:00:00+08:00">2023-09-20</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Linux学习日记004–remove命令学习"><a href="#Linux学习日记004–remove命令学习" class="headerlink" title="Linux学习日记004–remove命令学习"></a>Linux学习日记004–remove命令学习</h2><h3 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h3><p>今天我们见解,rm</p>
+<p><strong>rm命令是命令 remove 的简写，rm 命令用于删除文件或文件夹的命令，命令所在的路径为 &#x2F;bin&#x2F;rm。</strong></p>
+<h3 id="2-常用参数与使用场景："><a href="#2-常用参数与使用场景：" class="headerlink" title="2.常用参数与使用场景："></a>2.常用参数与使用场景：</h3><h5 id="2-1-1-文件删除"><a href="#2-1-1-文件删除" class="headerlink" title="2.1.1 文件删除"></a>2.1.1 文件删除</h5><p>rm 命令可以同时删除单个文件和多个文件。</p>
+<p>下面我们以“真传”来做个例子。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">删除单个文件  <span class="built_in">rm</span> 文件路径</span>  </span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">管理员将文件 <span class="string">&quot;天龙八部&quot;</span> 从真传中删除</span> </span><br><span class="line">rm 真传/天龙八部</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">删除多个文件  <span class="built_in">rm</span> 文件路径1  文件路径2</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">管理员将文件 <span class="string">&quot;天龙八部&quot;</span> 和 <span class="string">&quot;射雕英雄传&quot;</span> 从真传中删除</span></span><br><span class="line">rm 真传/天龙八部 真传/射雕英雄传</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-1-2-文件夹删除"><a href="#2-1-2-文件夹删除" class="headerlink" title="2.1.2 文件夹删除"></a>2.1.2 文件夹删除</h5><p> rm 命令通过参数 -d 删除空文件夹，可以通过参数 -r 删除文件夹</p>
+<p> 下面我们以“特摄片”文件夹为例</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">删除空文件夹 <span class="built_in">rm</span> -d 文件夹路径</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">管理员的特摄片文件没有文件，它使用参数 -d 删除文件夹</span></span><br><span class="line">rm -d 特摄片</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">递归删除文件夹 <span class="built_in">rm</span> -r 文件夹路径</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">小红的特摄片文件夹存放着“奥特曼”和“铠甲勇士”两个文件，他使用参数 -r 递归删除文件</span></span><br><span class="line">rm -r 特摄片</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-1-3-删除交互提示"><a href="#2-1-3-删除交互提示" class="headerlink" title="2.1.3 删除交互提示"></a>2.1.3 删除交互提示</h5><p> rm 命令在直接使用或使用参数 -i 在删除之前提示用户是否删除</p>
+<p> 下面我们将特摄片文件夹删除为例</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">删除提示 <span class="built_in">rm</span> -i 文件夹路径</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">香兰的特摄片存在着“奥特曼”和“铠甲勇士”两个文件，她通过参数 ir 交互删除文件夹</span></span><br><span class="line">rm -ir 特摄片</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">输出结果反馈用户是否删除</span></span><br><span class="line">[xianglan@iZbp18kqcwa62o5vmxsgkzZ ~]# rm -ir 特摄片</span><br><span class="line">rm：是否进入目录&quot;特摄片&quot;? y</span><br><span class="line">rm：是否删除目录 &quot;特摄片/铠甲勇士&quot;？y</span><br><span class="line">rm：是否删除目录 &quot;特摄片/奥特曼&quot;？y</span><br><span class="line">rm：是否删除目录 &quot;特摄片&quot;？y</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-1-4-强制删除文件"><a href="#2-1-4-强制删除文件" class="headerlink" title="2.1.4 强制删除文件"></a>2.1.4 强制删除文件</h5><p>rm 命令可以通过参数 -f 强制删除文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">强制删除文件 <span class="built_in">cp</span> -f 源文件 目标文件夹</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">zk将文件 /真传/九阳神功强制删除，且不需要确认反馈</span></span><br><span class="line">rm -f ./真传/九阳神功</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-1-5-文件夹删除显示详细信息"><a href="#2-1-5-文件夹删除显示详细信息" class="headerlink" title="2.1.5 文件夹删除显示详细信息"></a>2.1.5 文件夹删除显示详细信息</h5><p>  rm 命令可以通过参数 -v 显示文件夹删除文件名</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">显示删除详细信息 <span class="built_in">rm</span> -v 文件夹路径</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">管理员删除真传文件夹，并显示具体删除那些文件</span></span><br><span class="line">rm -rv 真传 </span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">输出结果反馈用户是否删除</span></span><br><span class="line">[root@iZbp18kqcwa62o5vmxsgkzZ ~]# rm -rv 真传</span><br><span class="line">rm：是否进入目录&quot;真传&quot;? y</span><br><span class="line">rm：是否删除普通文件 &quot;真传/.葵花宝典&quot;？y</span><br><span class="line">已删除&quot;真传/.葵花宝典&quot;</span><br><span class="line">rm：是否删除目录 &quot;真传/华山&quot;？y</span><br><span class="line">已删除目录：&quot;真传/华山&quot;</span><br><span class="line">rm：是否删除目录 &quot;真传/武当&quot;？y</span><br><span class="line">已删除目录：&quot;真传/武当&quot;</span><br><span class="line">rm：是否删除普通文件 &quot;真传/独孤九剑&quot;？y</span><br><span class="line">已删除&quot;真传/独孤九剑&quot;</span><br><span class="line">rm：是否删除普通文件 &quot;真传/九阳神功&quot;？y</span><br><span class="line">已删除&quot;真传/九阳神功&quot;</span><br><span class="line">rm：是否删除目录 &quot;真传&quot;？y</span><br><span class="line">已删除目录：&quot;真传&quot;</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">当使用参数 -r 递归删除时隐藏文件也会提示是否删除</span> </span><br></pre></td></tr></table></figure>
+
+<h5 id="2-1-6-使用通配符删除"><a href="#2-1-6-使用通配符删除" class="headerlink" title="2.1.6 使用通配符删除"></a>2.1.6 使用通配符删除</h5><p>   rm 命令可以通过通配符删除指定文件或文件夹</p>
+<p>   用户zk想将自己真传中的四个字的文件删除</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">通配符删除 <span class="built_in">rm</span> [参数] 通配符</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">用户zk通过通配符删除自己真传文件夹中的四字文件</span></span><br><span class="line">rm 真传/****</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-1-7-删除目录下除了指定文件的所有文件"><a href="#2-1-7-删除目录下除了指定文件的所有文件" class="headerlink" title="2.1.7 删除目录下除了指定文件的所有文件"></a>2.1.7 删除目录下除了指定文件的所有文件</h5><p>  rm 命令可以通过 ! 文件名 删除除了此文件外所有文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">格式 <span class="built_in">rm</span> -r 文件夹/!(文件名)</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">小黄想删除自己特摄片出“小魔仙”外所以文件</span></span><br><span class="line">rm -r 特摄片/!(小魔仙)</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">结果展示</span></span><br><span class="line">[xiaohuang@iZbp18kqcwa62o5vmxsgkzZ ~]# rm -r  特摄片/!(小魔仙)</span><br><span class="line">rm：是否删除目录 &quot;特摄片/奥特曼&quot;？y</span><br><span class="line">rm：是否删除目录 &quot;特摄片/铠甲勇士&quot;？y</span><br><span class="line">[xiaohuang@iZbp18kqcwa62o5vmxsgkzZ ~]# ls 特摄片</span><br><span class="line">小魔仙</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-今日学习总结："><a href="#3-今日学习总结：" class="headerlink" title="3.今日学习总结："></a>3.今日学习总结：</h3><p>rm命令是一个在Linux系统中使用的命令，它用于删除文件或目录。使用该命令时需要谨慎，因为删除的文件或目录无法恢复。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/20/Linux%E7%9A%84%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0002--cp%E5%91%BD%E4%BB%A4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="钟表匠">
+      <meta itemprop="description" content="立志成为运维工程师的运维小白">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="钟表铺">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/09/20/Linux%E7%9A%84%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0002--cp%E5%91%BD%E4%BB%A4/" class="post-title-link" itemprop="url">Linux学习日记002--copy命令学习</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-09-20 00:00:00 / 修改时间：17:22:20" itemprop="dateCreated datePublished" datetime="2023-09-20T00:00:00+08:00">2023-09-20</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Linux学习日记002–copy命令学习"><a href="#Linux学习日记002–copy命令学习" class="headerlink" title="Linux学习日记002–copy命令学习"></a>Linux学习日记002–copy命令学习</h2><h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>今天我们见解,CP</p>
+<p><strong>cp命令是命令 copy 的简写，cp命令用于复制文件或文件夹的命令，命令所在的路径为 &#x2F;bin&#x2F;cp。</strong></p>
+<h3 id="2-常用参数与使用场景："><a href="#2-常用参数与使用场景：" class="headerlink" title="2.常用参数与使用场景："></a>2.常用参数与使用场景：</h3><h5 id="2-1-1-文件复制"><a href="#2-1-1-文件复制" class="headerlink" title="2.1.1 文件复制"></a>2.1.1 文件复制</h5><p>cp 命令可以同时复制单个文件和多个文件。</p>
+<p>下面我们以金庸老爷子的书来做个例子。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">复制单个文件  <span class="built_in">cp</span> 文件名称  目标文件夹</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">管理员将文件 <span class="string">&quot;天龙八部.txt&quot;</span> 复制到 /books/ 中</span></span><br><span class="line">cp 天龙八部.txt /doc</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">复制多个文件  <span class="built_in">cp</span> 文件1  文件2 目标文件夹</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">管理员将文件 <span class="string">&quot;天龙八部.txt&quot;</span> 和 <span class="string">&quot;射雕英雄传.txt&quot;</span> 复制到 /books/ 中</span></span><br><span class="line">cp 天龙八部.txt 射雕英雄传.txt /doc</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-1-2-文件夹复制"><a href="#2-1-2-文件夹复制" class="headerlink" title="2.1.2 文件夹复制"></a>2.1.2 文件夹复制</h5><p> cp 命令可以通过参数 -r 复制文件夹</p>
+<p> 下面我们以将前面存放金庸老爷子书的文件夹复制为例子</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">复制文件夹 <span class="built_in">cp</span> -r 文件夹名称 目标文件夹</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">zk将管理员的 /book/ 全部复制到自己的家目录 /home/zk 中</span></span><br><span class="line">cp -r /book/ /home/zk/</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-1-3-复制覆盖提示"><a href="#2-1-3-复制覆盖提示" class="headerlink" title="2.1.3 复制覆盖提示"></a>2.1.3 复制覆盖提示</h5><p> cp 命令在直接使用或使用参数 -i 在复制覆盖之前提示用户是否覆盖</p>
+<p> 下面我们将真传再次复制到到相同文件夹</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">复制提示 <span class="built_in">cp</span> -i 文件夹名称 目标文件夹</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">zk将文件夹 /真传/ 再次复制到目录 /usr 中</span></span><br><span class="line">cp -r ./真传 /usr</span><br><span class="line">cp -ir ./真传 /usr</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">输出结果反馈用户是否删除</span></span><br><span class="line">cp -ir ./真传 /usr</span><br><span class="line">cp：是否覆盖&quot;/usr/真传/.葵花宝典&quot;？ y</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-1-4-强制覆盖文件"><a href="#2-1-4-强制覆盖文件" class="headerlink" title="2.1.4 强制覆盖文件"></a>2.1.4 强制覆盖文件</h5><p>cp 命令可以通过参数 -f 复制文件并强制覆盖文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">复制强制覆盖文件 <span class="built_in">cp</span> -f 源文件 目标文件夹</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">zk将文件 /真传/九阳神功 复制到目录 /usr 中，且不需要确认反馈</span></span><br><span class="line">cp -f ./真传/九阳神功 /usr</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-1-5-创建硬链接"><a href="#2-1-5-创建硬链接" class="headerlink" title="2.1.5 创建硬链接"></a>2.1.5 创建硬链接</h5><p>  cp 命令可以通过参数 -l 将多个文件做硬链接</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建硬链接 <span class="built_in">cp</span> -l 文件1 文件2</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">用户zk想将真传中的九阳神功和独孤九剑做个绑定，修改其中一个文件另一个文件也会修改</span></span><br><span class="line">cp -l ./真传/九阳神功 ./真传/独孤九剑 </span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">修改其中一个文件，另一个文件也修改</span></span><br><span class="line">vim ./真传/九阳神功</span><br><span class="line">cat ./真传/独孤九剑 </span><br></pre></td></tr></table></figure>
+
+<h5 id="2-1-6-创建软链接"><a href="#2-1-6-创建软链接" class="headerlink" title="2.1.6 创建软链接"></a>2.1.6 创建软链接</h5><p>   cp 命令可以通过参数 -s 将多个文件做软链接</p>
+<p>   用户zk想将真传中的九阳神功和独孤九剑做个绑定，修改其中一个文件另一个文件也会修改</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建软链接 <span class="built_in">cp</span> -s 文件1 文件2</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">用户zk想将真传中的九阳神功与葵花宝典做个绑定，修改绑定文件源文件不会修改</span></span><br><span class="line">cp -s ./真传/九阳神功 ./真传/葵花宝典</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">修改绑定文件，另一个文件也会修改</span></span><br><span class="line">vim ./真传/葵花宝典</span><br><span class="line">cat ./真传/九阳神功</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-1-7-显示复制进度信息"><a href="#2-1-7-显示复制进度信息" class="headerlink" title="2.1.7 显示复制进度信息"></a>2.1.7 显示复制进度信息</h5><p>  cp 命令可以通过参数 -v 显示复制文件的路径进度信息</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">显示复制进度信息 <span class="built_in">cp</span> -v 源文件 目标文件夹</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">zk 复制文件 /真传/九阳神功 复制到目录 /usr 中，显示文件复制进度</span></span><br><span class="line">cp -v ./真传/九阳神功 /usr</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">结果展示</span></span><br><span class="line">[root@iZbp18kqcwa62o5vmxsgkzZ ~]# cp -v ./真传/九阳神功 /usr</span><br><span class="line">cp：是否覆盖&quot;/usr/九阳神功&quot;？ y</span><br><span class="line">&quot;./真传/九阳神功&quot; -&gt; &quot;/usr/九阳神功&quot;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-2-cp命令的常用参数："><a href="#2-2-cp命令的常用参数：" class="headerlink" title="2.2 cp命令的常用参数："></a><strong>2.2 cp命令的常用参数：</strong></h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-r(recursive)：递归复制整个目录树；</span><br><span class="line">-f(force)：强制复制，即使目标文件已经存在也会覆盖；</span><br><span class="line">-i(interactive)：交互式复制，即在覆盖前提示用户确认；</span><br><span class="line">-v(verbose)：显示详细的复制进度信息；</span><br><span class="line">-n(no-clobber)：不要覆盖已存在的文件(使前面的 -i 选项失效)。</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="2-3-cp命令场景问题分析："><a href="#2-3-cp命令场景问题分析：" class="headerlink" title="2.3 cp命令场景问题分析："></a><strong>2.3 cp命令场景问题分析：</strong></h4><p>  <strong>知识问答1：关于参数-n与-f能不能同时使用</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp命令的-f选项和-n选项不能同时使用，因为它们的含义相反。-f选项会强制复制并覆盖目标文件，而-n选项则会在目标文件已经存在时不覆盖该文件。如果同时使用这两个选项，会导致逻辑上的矛盾。</span><br></pre></td></tr></table></figure>
+
+<p>  <strong>知识问答2：如果同时使用会出现什么结果</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">如果同时使用-f选项和-n选项，-f选项会覆盖-n选项，即会强制覆盖目标文件。</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="3-今日学习总结："><a href="#3-今日学习总结：" class="headerlink" title="3.今日学习总结："></a>3.今日学习总结：</h3><p> cp命令使用频率高，适用范围广，能够通过链接绑定多个文件，且能够复制文件或文件夹到指定文件夹，是linux常用命令之一。</p>
+<h3 id="4-参考文章："><a href="#4-参考文章：" class="headerlink" title="4.参考文章："></a>4.参考文章：</h3><p>linux cp命令详解<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36306340/article/details/82425754">Linux cp命令详解_辣条好辣的博客-CSDN博客</a></p>
+<p>linux—cp命令详解（一天一个命令）[linux—cp命令详解（一天一个命令） - 知乎 (zhihu.com)](<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/555930559#:~:text=linux%E2%80%94cp%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3%EF%BC%88%E4%B8%80%E5%A4%A9%E4%B8%80%E4%B8%AA%E5%91%BD%E4%BB%A4%EF%BC%89">https://zhuanlan.zhihu.com/p/555930559#:~:text=linux—cp命令详解（一天一个命令）</a> 1 1、概述 cp命令可以理解为英文单词copy的缩写，其功能为复制文件或目录。 cp命令可以将多个文件复制到一个具体的文件名或一个已经存在的目录下，也可以同时复制多个文件到一个指定的目录中。 2 2、语法 [root%40www,3 3、选项与参数： 长选项必须使用的参数对于短选项时也是必需使用的。 D:\list\img\D:\list\img\D:\list\img\ 4 4、案例 4.1复制文件 )</p>
+<p>Moncia智能AI</p>
+<p>Linux 系统 cp 复制命令详解<a target="_blank" rel="noopener" href="https://blog.csdn.net/u012581020/article/details/131635364">Linux 系统 cp 复制命令详解_大家都说我身材好的博客-CSDN博客</a></p>
+<p> x看到使用参数f还是会出现提示，感到很奇怪，下课后去请教了助教莫老师</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/08/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/./source/images/1.png">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="钟表匠">
       <meta itemprop="description" content="立志成为运维工程师的运维小白">
     </span>
@@ -291,8 +678,6 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="钟表匠"
-      src="/./source/images/1.png">
   <p class="site-author-name" itemprop="name">钟表匠</p>
   <div class="site-description" itemprop="description">立志成为运维工程师的运维小白</div>
 </div>
@@ -301,9 +686,17 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span>
       </div>
   </nav>
 </div>
