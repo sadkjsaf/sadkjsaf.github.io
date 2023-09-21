@@ -363,6 +363,98 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/20/Linux%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0006--cd%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="钟表匠">
+      <meta itemprop="description" content="立志成为运维工程师的运维小白">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="钟表铺">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/09/20/Linux%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0006--cd%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0/" class="post-title-link" itemprop="url">Linux学习日记006--cd命令学习</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-09-20 00:00:00" itemprop="dateCreated datePublished" datetime="2023-09-20T00:00:00+08:00">2023-09-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-09-21 14:51:10" itemprop="dateModified" datetime="2023-09-21T14:51:10+08:00">2023-09-21</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Linux学习日记006–cd命令学习"><a href="#Linux学习日记006–cd命令学习" class="headerlink" title="Linux学习日记006–cd命令学习"></a>Linux学习日记006–cd命令学习</h2><h3 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h3><p>今天我们见解,cd</p>
+<p><strong>cd 命令是命令 change directory 的简写，cd 命令用于改变当前的工作目录的命令，命令所在的路径为 &#x2F;bin&#x2F;cd。</strong></p>
+<h3 id="2-常用参数与使用场景："><a href="#2-常用参数与使用场景：" class="headerlink" title="2.常用参数与使用场景："></a>2.常用参数与使用场景：</h3><h5 id="2-1-1-切换到指定目录"><a href="#2-1-1-切换到指定目录" class="headerlink" title="2.1.1 切换到指定目录"></a>2.1.1 切换到指定目录</h5><p>cd 命令可以通过指定目录路径将当前目录切换到指定目录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">进入根目录  <span class="built_in">cd</span> /</span> </span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">管理员将当前目录切换回根目录</span></span><br><span class="line">cd /</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">结果展示</span></span><br><span class="line">[root@iZbp18kqcwa62o5vmxsgkzZ ~]# cd /</span><br><span class="line">[root@iZbp18kqcwa62o5vmxsgkzZ /]#</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">切换到指定目录 <span class="built_in">cd</span> 目标目录路径</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">管理员将当前根目录切换到 /opt</span></span><br><span class="line">cd /opt</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">结果展示</span></span><br><span class="line">[root@iZbp18kqcwa62o5vmxsgkzZ /]# cd /opt</span><br><span class="line">[root@iZbp18kqcwa62o5vmxsgkzZ opt]#</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-1-2-返回上一个目录"><a href="#2-1-2-返回上一个目录" class="headerlink" title="2.1.2 返回上一个目录"></a>2.1.2 返回上一个目录</h5><p> cd 可以返回上一个目录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">返回上一个目录 <span class="built_in">cd</span> -</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">管理员切换 /opt 又切换回根目录</span></span><br><span class="line">cd -</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-1-3-返回上级目录"><a href="#2-1-3-返回上级目录" class="headerlink" title="2.1.3 返回上级目录"></a>2.1.3 返回上级目录</h5><p>cd 命令可以通过 .. 返回当前目录的上级目录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">返回上级目录 <span class="built_in">cd</span> ..</span></span><br><span class="line">cd ..</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">返回上两级目录 <span class="built_in">cd</span> ../..</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">小黄进入到 /home/user 它使用 <span class="built_in">cd</span> ../.. 直接返回到 / 目录</span></span><br><span class="line">cd ../..</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">结果展示</span></span><br><span class="line">[root@iZbp18kqcwa62o5vmxsgkzZ user]# cd ../..</span><br><span class="line">[root@iZbp18kqcwa62o5vmxsgkzZ /]#</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-1-5-把上个命令的参数作为cd参数使用"><a href="#2-1-5-把上个命令的参数作为cd参数使用" class="headerlink" title="2.1.5 把上个命令的参数作为cd参数使用"></a>2.1.5 把上个命令的参数作为cd参数使用</h5><p>   cd 命令可以通过 !$ 把上个命令的参数作为 cd 参数使用</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">上个命令作为<span class="built_in">cd</span>参数使用 <span class="built_in">cd</span> !$</span> </span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">管理员首先查看真转目录下有没有“九阳神功”，发现存在，然后使用<span class="built_in">cd</span> 切换到真传目录</span></span><br><span class="line">ls 真传</span><br><span class="line">cd !$</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">结果展示</span></span><br><span class="line">[root@iZbp18kqcwa62o5vmxsgkzZ ~]# ls 真传</span><br><span class="line">九阳神功</span><br><span class="line">[root@iZbp18kqcwa62o5vmxsgkzZ ~]# cd !$</span><br><span class="line">cd 真传</span><br><span class="line">[root@iZbp18kqcwa62o5vmxsgkzZ 真传]#</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-今日学习总结："><a href="#3-今日学习总结：" class="headerlink" title="3.今日学习总结："></a>3.今日学习总结：</h3><p>cd命令是在终端中切换当前工作目录的命令。它允许用户进入指定的目录并在其中浏览和执行操作。</p>
+<h3 id="4-参考文章"><a href="#4-参考文章" class="headerlink" title="4.参考文章"></a>4.参考文章</h3><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/60922541">LINUX中的cd命令 - 知乎 (zhihu.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/81457">实例学习 Linux 的 cd 命令，及对内部命令的解释-阿里云开发者社区 (aliyun.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_44823898/article/details/106275726">Linux中的cd命令用法详解_cd语法_阿伟のBlog的博客-CSDN博客</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/linuxxuexi/p/cd.html">Linux cd命令详解 - 常江 - 博客园 (cnblogs.com)</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/20/Linux%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0005--move%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -460,7 +552,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/20/Linux%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0006--cd%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/08/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -474,7 +566,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2023/09/20/Linux%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0006--cd%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0/" class="post-title-link" itemprop="url">Linux学习日记006--cd命令学习</a>
+            <a href="/2023/09/08/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
         </h2>
 
         <div class="post-meta">
@@ -484,23 +576,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2023-09-20 00:00:00" itemprop="dateCreated datePublished" datetime="2023-09-20T00:00:00+08:00">2023-09-20</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-09-21 14:51:10" itemprop="dateModified" datetime="2023-09-21T14:51:10+08:00">2023-09-21</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
-                </span>
+              <time title="创建时间：2023-09-08 17:11:39" itemprop="dateCreated datePublished" datetime="2023-09-08T17:11:39+08:00">2023-09-08</time>
             </span>
 
           
@@ -514,25 +590,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="Linux学习日记006–cd命令学习"><a href="#Linux学习日记006–cd命令学习" class="headerlink" title="Linux学习日记006–cd命令学习"></a>Linux学习日记006–cd命令学习</h2><h3 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h3><p>今天我们见解,cd</p>
-<p><strong>cd 命令是命令 change directory 的简写，cd 命令用于改变当前的工作目录的命令，命令所在的路径为 &#x2F;bin&#x2F;cd。</strong></p>
-<h3 id="2-常用参数与使用场景："><a href="#2-常用参数与使用场景：" class="headerlink" title="2.常用参数与使用场景："></a>2.常用参数与使用场景：</h3><h5 id="2-1-1-切换到指定目录"><a href="#2-1-1-切换到指定目录" class="headerlink" title="2.1.1 切换到指定目录"></a>2.1.1 切换到指定目录</h5><p>cd 命令可以通过指定目录路径将当前目录切换到指定目录</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">进入根目录  <span class="built_in">cd</span> /</span> </span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">管理员将当前目录切换回根目录</span></span><br><span class="line">cd /</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">结果展示</span></span><br><span class="line">[root@iZbp18kqcwa62o5vmxsgkzZ ~]# cd /</span><br><span class="line">[root@iZbp18kqcwa62o5vmxsgkzZ /]#</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">切换到指定目录 <span class="built_in">cd</span> 目标目录路径</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">管理员将当前根目录切换到 /opt</span></span><br><span class="line">cd /opt</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">结果展示</span></span><br><span class="line">[root@iZbp18kqcwa62o5vmxsgkzZ /]# cd /opt</span><br><span class="line">[root@iZbp18kqcwa62o5vmxsgkzZ opt]#</span><br></pre></td></tr></table></figure>
+          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
-<h5 id="2-1-2-返回上一个目录"><a href="#2-1-2-返回上一个目录" class="headerlink" title="2.1.2 返回上一个目录"></a>2.1.2 返回上一个目录</h5><p> cd 可以返回上一个目录</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">返回上一个目录 <span class="built_in">cd</span> -</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">管理员切换 /opt 又切换回根目录</span></span><br><span class="line">cd -</span><br></pre></td></tr></table></figure>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 
-<h5 id="2-1-3-返回上级目录"><a href="#2-1-3-返回上级目录" class="headerlink" title="2.1.3 返回上级目录"></a>2.1.3 返回上级目录</h5><p>cd 命令可以通过 .. 返回当前目录的上级目录</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">返回上级目录 <span class="built_in">cd</span> ..</span></span><br><span class="line">cd ..</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">返回上两级目录 <span class="built_in">cd</span> ../..</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">小黄进入到 /home/user 它使用 <span class="built_in">cd</span> ../.. 直接返回到 / 目录</span></span><br><span class="line">cd ../..</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">结果展示</span></span><br><span class="line">[root@iZbp18kqcwa62o5vmxsgkzZ user]# cd ../..</span><br><span class="line">[root@iZbp18kqcwa62o5vmxsgkzZ /]#</span><br></pre></td></tr></table></figure>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 
-<h5 id="2-1-5-把上个命令的参数作为cd参数使用"><a href="#2-1-5-把上个命令的参数作为cd参数使用" class="headerlink" title="2.1.5 把上个命令的参数作为cd参数使用"></a>2.1.5 把上个命令的参数作为cd参数使用</h5><p>   cd 命令可以通过 !$ 把上个命令的参数作为 cd 参数使用</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">上个命令作为<span class="built_in">cd</span>参数使用 <span class="built_in">cd</span> !$</span> </span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">管理员首先查看真转目录下有没有“九阳神功”，发现存在，然后使用<span class="built_in">cd</span> 切换到真传目录</span></span><br><span class="line">ls 真传</span><br><span class="line">cd !$</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">结果展示</span></span><br><span class="line">[root@iZbp18kqcwa62o5vmxsgkzZ ~]# ls 真传</span><br><span class="line">九阳神功</span><br><span class="line">[root@iZbp18kqcwa62o5vmxsgkzZ ~]# cd !$</span><br><span class="line">cd 真传</span><br><span class="line">[root@iZbp18kqcwa62o5vmxsgkzZ 真传]#</span><br></pre></td></tr></table></figure>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
-<h3 id="3-今日学习总结："><a href="#3-今日学习总结：" class="headerlink" title="3.今日学习总结："></a>3.今日学习总结：</h3><p>cd命令是在终端中切换当前工作目录的命令。它允许用户进入指定的目录并在其中浏览和执行操作。</p>
-<h3 id="4-参考文章"><a href="#4-参考文章" class="headerlink" title="4.参考文章"></a>4.参考文章</h3><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/60922541">LINUX中的cd命令 - 知乎 (zhihu.com)</a></p>
-<p><a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/81457">实例学习 Linux 的 cd 命令，及对内部命令的解释-阿里云开发者社区 (aliyun.com)</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_44823898/article/details/106275726">Linux中的cd命令用法详解_cd语法_阿伟のBlog的博客-CSDN博客</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/linuxxuexi/p/cd.html">Linux cd命令详解 - 常江 - 博客园 (cnblogs.com)</a></p>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 
       
     </div>
@@ -650,76 +720,6 @@
 <p>linux—cp命令详解（一天一个命令）[linux—cp命令详解（一天一个命令） - 知乎 (zhihu.com)](<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/555930559#:~:text=linux%E2%80%94cp%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3%EF%BC%88%E4%B8%80%E5%A4%A9%E4%B8%80%E4%B8%AA%E5%91%BD%E4%BB%A4%EF%BC%89">https://zhuanlan.zhihu.com/p/555930559#:~:text=linux—cp命令详解（一天一个命令）</a> 1 1、概述 cp命令可以理解为英文单词copy的缩写，其功能为复制文件或目录。 cp命令可以将多个文件复制到一个具体的文件名或一个已经存在的目录下，也可以同时复制多个文件到一个指定的目录中。 2 2、语法 [root%40www,3 3、选项与参数： 长选项必须使用的参数对于短选项时也是必需使用的。 D:\list\img\D:\list\img\D:\list\img\ 4 4、案例 4.1复制文件 )</p>
 <p>Moncia智能AI</p>
 <p>Linux 系统 cp 复制命令详解<a target="_blank" rel="noopener" href="https://blog.csdn.net/u012581020/article/details/131635364">Linux 系统 cp 复制命令详解_大家都说我身材好的博客-CSDN博客</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/08/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="钟表匠">
-      <meta itemprop="description" content="立志成为运维工程师的运维小白">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="钟表铺">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/09/08/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-09-08 17:11:39" itemprop="dateCreated datePublished" datetime="2023-09-08T17:11:39+08:00">2023-09-08</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 
       
     </div>
