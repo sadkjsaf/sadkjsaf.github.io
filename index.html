@@ -167,6 +167,112 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/22/Linux%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0007--grep%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="钟表匠">
+      <meta itemprop="description" content="立志成为运维工程师的运维小白">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="钟表铺">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/09/22/Linux%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0007--grep%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0/" class="post-title-link" itemprop="url">Linux学习日记007--grep命令学习</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-09-22 11:36:25 / 修改时间：11:35:56" itemprop="dateCreated datePublished" datetime="2023-09-22T11:36:25+08:00">2023-09-22</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Linux学习日记007–grep命令学习"><a href="#Linux学习日记007–grep命令学习" class="headerlink" title="Linux学习日记007–grep命令学习"></a>Linux学习日记007–grep命令学习</h2><h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>今天我们见解,grep</p>
+<p><strong>Linux系统中grep命令是一种强大的文本搜索工具，它能使用正则表达式搜索文本，并把匹 配的行打印出来。grep全称是Global Regular Expression Print，表示全局正则表达式版本，它的使用权限是所有用户。</strong></p>
+<h3 id="2-常用参数与使用场景："><a href="#2-常用参数与使用场景：" class="headerlink" title="2.常用参数与使用场景："></a>2.常用参数与使用场景：</h3><h5 id="2-1-1-搜索指定字符"><a href="#2-1-1-搜索指定字符" class="headerlink" title="2.1.1 搜索指定字符"></a>2.1.1 搜索指定字符</h5><p>grep 命令可以搜索文本是否存在指定字符</p>
+<p>下面我们以真传的“九阳神功”来做个例子。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">搜索指定字符  grep 指定字符  目标文本文件</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">管理员从文件 <span class="string">&quot;九阳神功&quot;</span> 查找是否存在字符 “哲宗元祐”</span></span><br><span class="line">grep 哲宗元祐 九阳神功</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">结果展示</span></span><br><span class="line">[root@iZbp18kqcwa62o5vmxsgkzZ 真传]# grep 哲宗元祐 九阳神功</span><br><span class="line">在新修版《释名》中，金庸写道：“本书故事发生于北宋哲宗元祐、绍圣年间，公元1094年前后。</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-1-2-反转搜索"><a href="#2-1-2-反转搜索" class="headerlink" title="2.1.2 反转搜索"></a>2.1.2 反转搜索</h5><p> grep 可以通过参数 -v 搜索出除了目标字符外的所有行</p>
+<p> 我们继续以“九阳神功”为例子</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">反转搜索 grep -v 指定字符 目标文本文件</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">管理员从文件 <span class="string">&quot;九阳神功&quot;</span> 查找字符 “哲宗元祐” 外的其他信息</span></span><br><span class="line">grep -v 哲宗元祐 九阳神功</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-1-3-计算符合范本样式的行数"><a href="#2-1-3-计算符合范本样式的行数" class="headerlink" title="2.1.3 计算符合范本样式的行数"></a>2.1.3 计算符合范本样式的行数</h5><p>grep 命令可以通过参数 -c 计算符合范本样式的行数</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">格式 grep -c 范本样式 目标文本文件</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">管理员想计算“九阳神功”中的 “哲宗元祐” 总行数</span></span><br><span class="line">grep -c 哲宗元祐 九阳神功</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">结果展示</span></span><br><span class="line">[root@iZbp18kqcwa62o5vmxsgkzZ 真传]# grep -c 哲宗元祐 九阳神功</span><br><span class="line">1</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-1-4-忽略大小写搜索"><a href="#2-1-4-忽略大小写搜索" class="headerlink" title="2.1.4 忽略大小写搜索"></a>2.1.4 忽略大小写搜索</h5><p>grep 命令可以通过参数 -i 忽略大小写查找</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">忽略大小写搜索 grep -i 字符大小 目标文件</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">管理员想从“英文/Hamoret”查找字符“you are cool”</span></span><br><span class="line">grep -i &quot;you are cool&quot; 英文/Hamoret</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">结果反馈</span></span><br><span class="line">[root@iZbp18kqcwa62o5vmxsgkzZ 真传]# grep -c 英文/Hamoret “you are cool”</span><br><span class="line">you are cool</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-1-5-只显示被模式匹配到的字符"><a href="#2-1-5-只显示被模式匹配到的字符" class="headerlink" title="2.1.5 只显示被模式匹配到的字符"></a>2.1.5 只显示被模式匹配到的字符</h5><p> grep 可以通过参数 -o 只显示匹配到的字符</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">只显示被模式匹配到的字符 grep -o 字符 文本文件</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">用户zk想从九阳神功中查找“段誉”字符，并只显示匹配的字符</span></span><br><span class="line">grep -o 段誉 九阳神功</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">结果展示</span></span><br><span class="line">小说开头#段誉</span><br><span class="line">结识钟灵时，两人的对话中表明钟灵16岁，#段誉</span><br><span class="line">19岁，后段正淳回忆自己16年前的春天遇到甘宝宝，年底甘宝宝生钟灵，因此可以确定故事开始于辛未年年底（即公元1092元旦左右）。</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">grep 默认别名<span class="built_in">alias</span> grep=<span class="string">&#x27;grep --color=auto&#x27;</span></span></span><br></pre></td></tr></table></figure>
+
+<h5 id="2-1-6-将匹配的内容以颜色高亮显示"><a href="#2-1-6-将匹配的内容以颜色高亮显示" class="headerlink" title="2.1.6 将匹配的内容以颜色高亮显示"></a>2.1.6 将匹配的内容以颜色高亮显示</h5><p>   cp 命令可以通过参数 -s 将多个文件做软链接</p>
+<p>   用户zk想将真传中的九阳神功和独孤九剑做个绑定，修改其中一个文件另一个文件也会修改</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建软链接 <span class="built_in">cp</span> -s 文件1 文件2</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">用户zk想将真传中的九阳神功与葵花宝典做个绑定，修改绑定文件源文件不会修改</span></span><br><span class="line">cp -s ./真传/九阳神功 ./真传/葵花宝典</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">修改绑定文件，另一个文件也会修改</span></span><br><span class="line">vim ./真传/葵花宝典</span><br><span class="line">cat ./真传/九阳神功</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-1-7-通过管道命令查找"><a href="#2-1-7-通过管道命令查找" class="headerlink" title="2.1.7 通过管道命令查找"></a>2.1.7 通过管道命令查找</h5><p>  grep 可通过管道命令将前个命令的输出作为 grep 的输入</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">通过管道命令查找 前一个命令 | grep [参数] 文本文件</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">管理员通过 find 命令查找到“九阳神功”，再通过 grep 计算“九阳神功”中的 “哲宗元祐” 总行数</span></span><br><span class="line">find -name “九阳神功” | grep -c 哲宗元祐 九阳神功</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">结果展示</span></span><br><span class="line">[root@iZbp18kqcwa62o5vmxsgkzZ 真传]# find -name &quot;九阳神功&quot; | grep -c 哲宗元祐 九阳神功</span><br><span class="line">1</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-1-8-显示行号信息"><a href="#2-1-8-显示行号信息" class="headerlink" title="2.1.8 显示行号信息"></a>2.1.8 显示行号信息</h5><p> grep 可以通过参数 -n 用于在文本文件中查找匹配指定模式的字符串，并输出匹配到的内容以及所在行号。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">显示行号信息 grep -n 匹配字符 文本文件</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">管理员通过参数 -n 显示字符“段誉”的行号信息</span></span><br><span class="line">grep -n 段誉 九阳神功</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">结果展示</span></span><br><span class="line">9:段誉</span><br><span class="line">10:主条目：段誉</span><br><span class="line">11:段誉—大理国“镇南王”段正淳的世子，</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-1-9-列出匹配或不匹配的文件名"><a href="#2-1-9-列出匹配或不匹配的文件名" class="headerlink" title="2.1.9 列出匹配或不匹配的文件名"></a>2.1.9 列出匹配或不匹配的文件名</h5><p> grep 命令通过参数 -l 与参数 -L 分别列出包含匹配模式与不匹配模式的文件名</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">列出匹配文件名 grep -l 匹配模式 文本文件</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">小黄想列出存在字符“Hello”的 file 文件，他通过 grep 命令与通配符查找</span></span><br><span class="line">grep -l Hello file*</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">结果</span></span><br><span class="line">file1.txt</span><br><span class="line">file2.txt</span><br><span class="line">file3.txt</span><br><span class="line">file4.txt</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">列出不匹配文件名</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">小红想列出不存在字符“Hello”的 file 文件，她也通过 grep 命令与通配符查找</span></span><br><span class="line">grep -L Hello file*</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">注意：在匹配搜索时可能因为大小写的区别而搜索不出结果，可以通过参数 -i 忽略大小写搜索</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">例如：grep -l -i Hello file*</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2-2-grep命令的常用参数："><a href="#2-2-grep命令的常用参数：" class="headerlink" title="2.2 grep命令的常用参数："></a><strong>2.2 grep命令的常用参数：</strong></h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">-i（ignore-case）：忽略大小写，不区分大小写地匹配字符串。</span><br><span class="line">-v（invert-match）：反转匹配，只输出不匹配的行。</span><br><span class="line">-n（line-number）：显示匹配行所在的行号。</span><br><span class="line">-c（count）：只输出匹配到的行数。</span><br><span class="line">-l（files-with-matches）：只输出包含匹配字符串的文件名。</span><br><span class="line">-L（files-without-match）：只输出不包含匹配字符串的文件名。</span><br><span class="line">-r（recursive）：递归查找子目录中的文件。</span><br><span class="line">-w（word-regexp）：只匹配整个单词，而不是单词的一部分。</span><br><span class="line">-e（regexp）：指定正则表达式模式。</span><br><span class="line">-f（file）：从指定文件中读取模式。</span><br><span class="line">这些参数可以根据实际需要进行组合使用，以实现更精确的匹配和输出。</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-今日学习总结："><a href="#3-今日学习总结：" class="headerlink" title="3.今日学习总结："></a>3.今日学习总结：</h3><p> grep 命令是一个强大的文本搜索工具，它可以在文件中查找指定模式的字符串，并输出匹配到的内容。grep 命令可以使用正则表达式来指定模式，也可以使用多种参数来实现更精确的匹配和输出。</p>
+<h3 id="4-参考文章"><a href="#4-参考文章" class="headerlink" title="4.参考文章"></a>4.参考文章</h3><p>1.Monica智能AI</p>
+<p>2.<a target="_blank" rel="noopener" href="https://www.xiaohongshu.com/explore/6200f0db00000000210383a6">Linux系统grep命令的使用 (xiaohongshu.com)</a></p>
+<p>3.<a target="_blank" rel="noopener" href="https://www.xiaohongshu.com/explore/643ea8b40000000013007641">今日知识点之Linux命令–grep (xiaohongshu.com)</a></p>
+<p>4.<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_40797605/article/details/89075918">Linux中grep命令详解_清新的竹青的博客-CSDN博客</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/21/Linux%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0006--cd%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -795,7 +901,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
